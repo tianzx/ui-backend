@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smartautotech.ui.dao.UserDao">
+
+    <resultMap id="userResultMap" type="com.smartautotech.ui.model.User">
+        <id property="id" column="id" />
+        <result property="emailAddress" column="email_address"/>
+        <result property="password" column="password"/>
+        <result property="firstName" column="first_name"/>
+        <result property="lastName" column="last_name"/>
+        <result property="birthday" column="birthday"/>
+        <result property="gender" column="gender"/>
+        <result property="userType" column="user_type"/>
+        <result property="carTypeCode" column="car_type_code"/>
+        <result property="phone" column="phone"/>
+        <result property="mobile" column="mobile"/>
+        <result property="dln" column="dln"/>
+        <result property="countryId" column="country_id"/>
+        <result property="provinceId" column="province_id"/>
+        <result property="cityId" column="city_id"/>
+        <result property="address" column="address"/>
+        <result property="ip" column="ip"/>
+        <result property="token" column="token"/>
+        <result property="imei" column="imei"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="kinship" column="kinship" />
+    </resultMap>
+
+    <select id="selectUserById" resultMap="userResultMap" parameterType="int" >
+        select id, email_address, password, first_name, last_name, birthday, gender, user_type, car_type_code, phone, mobile, country_id,
+        province_id, city_id, address, ip, token, create_time, update_time, parent_id, kinship from user where id = #{userId}
+    </select>
+</mapper>
