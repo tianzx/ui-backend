@@ -1,5 +1,5 @@
 .gradle
-/build/
+#/build/
 !gradle/wrapper/gradle-wrapper.jar
 
 ### STS ###
@@ -26,7 +26,7 @@ nbdist/
 ### Java template
 # Compiled class file
 *.class
-
+src/main/resources/**/
 # Log file
 *.log
 
